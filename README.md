@@ -38,8 +38,22 @@ src/test/java/org/demo/selenium_zap_pom/
 1. Descargar e instalar [OWASP ZAP](https://www.zaproxy.org/download/)
 2. Iniciar ZAP en modo daemon:
    ```bash
-   zap.sh -daemon -host localhost -port 8080 -config api.key=5abdrhung2c4d7o921nt6631l8
+   zap.sh -daemon -host localhost -port 8080 -config api.key=YOUR_API_KEY
    ```
+
+## Configuración de Variables de Entorno
+El proyecto utiliza un archivo `.env` para la configuración:
+
+**Ubicación**: `src/test/java/org/demo/seleniumzappom/utils/.env`
+
+```properties
+ZAP_PROXYHOST=localhost
+ZAP_PROXYPORT=8080
+ZAP_API_KEY=your_zap_api_key_here
+SCAN_URL=https://www.demoblaze.com/
+```
+
+**Nota**: Modifica el archivo `.env` con tu API key de ZAP antes de ejecutar las pruebas.
 
 ## Ejecución de Tests
 
@@ -91,7 +105,7 @@ bash mvnw allure:serve
 ### Proxy ZAP
 - **Host**: localhost
 - **Puerto**: 8080
-- **API Key**: 5abdrhung2c4d7o921nt6631l8
+- **API Key**: Configurada en archivo `.env`
 
 ## Flujo de Ejecución
 1. **Inicialización**: Configura ZAP proxy y ChromeDriver
