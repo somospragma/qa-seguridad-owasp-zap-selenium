@@ -1,5 +1,6 @@
-package org.demo.selenium_zap_pom;
+package org.demo.seleniumzappom.interfaces;
 
+import org.demo.seleniumzappom.utils.EnvConfig;
 import org.zaproxy.clientapi.core.ClientApi;
 import org.zaproxy.clientapi.core.ClientApiException;
 
@@ -11,10 +12,10 @@ import java.nio.file.Paths;
 
 public class ZapManager implements ZapInterface {
     private ClientApi api;
-    private static final String ZAP_PROXYHOST = "localhost";
-    private static final int ZAP_PROXYPORT = 8080;
-    private static final String ZAP_API_KEY = "5abdrhung2c4d7o921nt6631l8";
-    private static final String SCAN_URL = "https://www.demoblaze.com/";
+    private static final String ZAP_PROXYHOST = EnvConfig.getZapProxyHost();
+    private static final int ZAP_PROXYPORT = EnvConfig.getZapProxyPort();
+    private static final String ZAP_API_KEY = EnvConfig.getZapApiKey();
+    private static final String SCAN_URL = EnvConfig.getScanUrl();
 
     @Override
     public void initializeZap() throws ClientApiException {

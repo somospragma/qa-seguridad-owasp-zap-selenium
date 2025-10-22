@@ -1,4 +1,4 @@
-package org.demo.selenium_zap_pom;
+package org.demo.seleniumzappom.interfaces;
 
 import org.openqa.selenium.WebDriver;
 

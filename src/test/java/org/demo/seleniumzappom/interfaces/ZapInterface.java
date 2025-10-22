@@ -1,4 +1,4 @@
-package org.demo.selenium_zap_pom;
+package org.demo.seleniumzappom.interfaces;
 
 import org.zaproxy.clientapi.core.ClientApiException;
 import java.io.IOException;

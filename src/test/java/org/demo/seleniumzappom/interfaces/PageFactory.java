@@ -1,8 +1,8 @@
-package org.demo.selenium_zap_pom;
+package org.demo.seleniumzappom.interfaces;
 
-import org.demo.selenium_zap_pom.pages.LaptopsPage;
-import org.demo.selenium_zap_pom.pages.MonitorsPage;
-import org.demo.selenium_zap_pom.pages.PhonesPage;
+import org.demo.seleniumzappom.pages.LaptopsPage;
+import org.demo.seleniumzappom.pages.MonitorsPage;
+import org.demo.seleniumzappom.pages.PhonesPage;
 import org.openqa.selenium.WebDriver;
 
 public class PageFactory {

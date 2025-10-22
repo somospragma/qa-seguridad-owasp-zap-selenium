@@ -1,8 +1,12 @@
-package org.demo.selenium_zap_pom.test;
+package org.demo.seleniumzappom.test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.demo.selenium_zap_pom.MenuInterface;
-import org.demo.selenium_zap_pom.PageFactory;
+
+import org.demo.seleniumzappom.interfaces.MenuInterface;
+import org.demo.seleniumzappom.interfaces.PageFactory;
+import org.demo.seleniumzappom.interfaces.ZapInterface;
+import org.demo.seleniumzappom.interfaces.ZapManager;
+import org.demo.seleniumzappom.utils.EnvConfig;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,8 +15,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
-import org.demo.selenium_zap_pom.ZapInterface;
-import org.demo.selenium_zap_pom.ZapManager;
 import org.zaproxy.clientapi.core.ClientApiException;
 import io.qameta.allure.*;
 
@@ -24,9 +26,9 @@ public class AnalisisFinalTest {
     private WebDriver driver;
     private ZapInterface zapManager;
 
-    private static final String ZAP_PROXYHOST = "localhost";
-    private static final int ZAP_PROXYPORT = 8080;
-    private static final String SCAN_URL = "https://www.demoblaze.com/";
+    private static final String ZAP_PROXYHOST = EnvConfig.getZapProxyHost();
+    private static final int ZAP_PROXYPORT = EnvConfig.getZapProxyPort();
+    private static final String SCAN_URL = EnvConfig.getScanUrl();
 
     @Before
     @Step("Configurar entorno de prueba")

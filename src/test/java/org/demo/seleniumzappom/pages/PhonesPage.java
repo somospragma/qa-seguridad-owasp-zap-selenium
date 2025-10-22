@@ -1,6 +1,6 @@
-package org.demo.selenium_zap_pom.pages;
+package org.demo.seleniumzappom.pages;
 
-import org.demo.selenium_zap_pom.MenuInterface;
+import org.demo.seleniumzappom.interfaces.MenuInterface;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

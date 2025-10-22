@@ -1,6 +1,6 @@
-package org.demo.selenium_zap_pom.pages;
+package org.demo.seleniumzappom.pages;
 
-import org.demo.selenium_zap_pom.PageInterface;
+import org.demo.seleniumzappom.interfaces.PageInterface;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;

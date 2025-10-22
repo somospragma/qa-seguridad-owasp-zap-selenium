@@ -1,4 +1,4 @@
-package org.demo.selenium_zap_pom.test;
+package org.demo.seleniumzappom.test;
 
 import io.qameta.allure.*;
 import org.junit.Test;
