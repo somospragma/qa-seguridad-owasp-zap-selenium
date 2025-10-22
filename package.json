@@ -1,0 +1,7 @@
+{
+  "name": "selenium_zap_pom _V1",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/cli": "^9.20.0"
+  }
+}
