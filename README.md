@@ -11,8 +11,14 @@ Framework de automatización de pruebas de seguridad que combina Selenium WebDri
 
 ## Estructura del Proyecto
 ```
-src/test/java/org/demo/selenium_zap_pom/
-├── pages/                    # Page Objects
+src/test/java/org/demo/seleniumzappom/
+├── interfaces/              # Interfaces y gestores
+│   ├── MenuInterface.java   # Interfaz para menús
+│   ├── PageInterface.java   # Interfaz para páginas
+│   ├── ZapInterface.java    # Interfaz para ZAP
+│   ├── ZapManager.java      # Gestión de OWASP ZAP
+│   └── PageFactory.java     # Factory para páginas
+├── pages/                   # Page Objects
 │   ├── BasePage.java        # Clase base
 │   ├── LaptopsPage.java     # Página de laptops
 │   ├── MonitorsPage.java    # Página de monitores
@@ -20,12 +26,15 @@ src/test/java/org/demo/selenium_zap_pom/
 ├── test/                    # Tests
 │   ├── AnalisisFinalTest.java      # Test principal
 │   ├── SecurityAnalysisTest.java   # Test con Allure
-│   └── SimpleAllureTest.java       # Test básico
-├── MenuInterface.java       # Interfaz para menús
-├── PageInterface.java       # Interfaz para páginas
-├── ZapInterface.java        # Interfaz para ZAP
-├── ZapManager.java          # Gestión de OWASP ZAP
-└── PageFactory.java         # Factory para páginas
+│   ├── SimpleAllureTest.java       # Test básico
+│   └── CucumberSecurityTest.java   # Test con Cucumber
+├── utils/                   # Utilidades
+│   ├── .env                 # Variables de entorno
+│   └── EnvConfig.java       # Configuración de entorno
+├── runner/                  # Runners
+│   └── CucumberTestRunner.java     # Runner de Cucumber
+└── steps/                   # Steps de Cucumber
+    └── SecuritySteps.java   # Steps de seguridad
 ```
 
 ## Requisitos Previos
