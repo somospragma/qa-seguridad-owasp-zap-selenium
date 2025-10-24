@@ -1,0 +1,15 @@
+site_name: Selenium ZAP Security Testing Framework
+site_description: Framework de automatización de pruebas de seguridad con Selenium y OWASP ZAP
+
+nav:
+  - Inicio: index.md
+  - Tópicos: topicos.md
+  - Tecnologías: tecnologias.md
+  - Consideraciones: consideraciones.md
+  - Instalación: instalacion.md
+  - Descarga: descarga.md
+  - Tests: tests.md
+
+theme:
+  name: material
+  language: es

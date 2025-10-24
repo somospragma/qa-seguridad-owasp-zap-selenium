@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: qa-seguridad-owasp-zap-selenium
+  description: Framework de automatización de pruebas de seguridad que combina Selenium WebDriver con OWASP ZAP
+  annotations:
+    github.com/project-slug: somospragma/qa-seguridad-owasp-zap-selenium
+spec:
+  type: library
+  lifecycle: production
+  owner: qa-team
+  system: testing-framework
