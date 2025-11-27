@@ -23,6 +23,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static org.junit.Assert.assertTrue;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import io.qameta.allure.Allure;
+import java.io.ByteArrayInputStream;
 
 @Epic("Análisis de Seguridad")
 @Feature("Pruebas de Seguridad con ZAP")
@@ -90,24 +94,31 @@ public class SecurityAnalysisTest {
     private void navegarAPaginaPrincipal() {
         driver.get(SCAN_URL);
         driver.manage().window().maximize();
+        adjuntarCaptura("01 - Página principal");
     }
 
     @Step("Interactuar con menú de laptops")
     private void interactuarConMenuLaptops() throws InterruptedException {
         MenuInterface laptopsPage = PageFactory.createPage("laptops", driver);
         laptopsPage.clickMenu();
+        Thread.sleep(500); // breve espera para estabilidad visual
+        adjuntarCaptura("02 - Menú Laptops");
     }
 
     @Step("Interactuar con menú de teléfonos")
     private void interactuarConMenuTelefonos() throws InterruptedException {
         MenuInterface phonesPage = PageFactory.createPage("phones", driver);
         phonesPage.clickMenu();
+        Thread.sleep(500);
+        adjuntarCaptura("03 - Menú Teléfonos");
     }
 
     @Step("Interactuar con menú de monitores")
     private void interactuarConMenuMonitores() throws InterruptedException {
         MenuInterface monitorsPage = PageFactory.createPage("monitors", driver);
         monitorsPage.clickMenu();
+        Thread.sleep(500);
+        adjuntarCaptura("04 - Menú Monitores");
     }
 
     @Step("Generar reporte de seguridad")
@@ -116,8 +127,19 @@ public class SecurityAnalysisTest {
             zapManager.generateReport();
             assertTrue("El reporte debe existir", 
                 Files.exists(Paths.get(System.getProperty("user.dir") + "/scan-results/SeleniumTest.html")));
+            adjuntarCaptura("05 - Reporte ZAP generado");
         } else {
             System.out.println("Test completado sin análisis de seguridad (ZAP no disponible)");
+        }
+    }
+
+    @Step("Adjuntar captura: {nombre}")
+    private void adjuntarCaptura(String nombre) {
+        try {
+            byte[] png = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            Allure.addAttachment(nombre, "image/png", new ByteArrayInputStream(png), "png");
+        } catch (Exception e) {
+            System.err.println("No fue posible capturar pantalla: " + e.getMessage());
         }
     }
 

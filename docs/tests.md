@@ -1,3 +1,54 @@
+# Pruebas y Reportes
+
+Esta guía describe cómo ejecutar las pruebas de seguridad y generar los reportes asociados (Allure y OWASP ZAP).
+
+## Requisitos
+
+- Java 17 (JDK)
+- Maven (se recomienda usar el wrapper `mvnw`)
+- OWASP ZAP en ejecución local (por defecto `localhost:8080`) con API Key configurada
+
+## Configuración de ZAP
+
+Edite el archivo `.env` en `src/test/java/org/demo/seleniumzappom/utils/.env`:
+
+```
+ZAP_PROXYHOST=localhost
+ZAP_PROXYPORT=8080
+ZAP_API_KEY=<tu_api_key>
+SCAN_URL=https://www.demoblaze.com/
+```
+
+## Ejecutar pruebas
+
+Ejecuta todos los tests (incluye la generación de reportes ZAP cuando ZAP está disponible):
+
+```bash
+./mvnw test
+```
+
+- Reporte ZAP HTML: `scan-results/SeleniumTest.html`
+- Reporte ZAP JSON: `scan-results/SeleniumTest.json`
+
+## Generar reporte Allure
+
+Reporte estático (HTML):
+
+```bash
+./mvnw allure:report
+open target/site/allure-maven-plugin/index.html
+```
+
+Servidor interactivo:
+
+```bash
+./mvnw allure:serve
+```
+
+## Notas
+
+- Si ZAP no está corriendo o no es accesible, las pruebas continúan sin análisis de seguridad.
+- El proyecto está configurado para compilar con Java 17 (`pom.xml`). Asegúrate de que `JAVA_HOME` apunte a un JDK 17.
 # Tests
 
 ## Tipos de Tests

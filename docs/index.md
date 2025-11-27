@@ -19,3 +19,11 @@ Framework de automatización de pruebas de seguridad que combina Selenium WebDri
 3. **Captura**: ZAP registra todo el tráfico HTTP/HTTPS
 4. **Análisis**: Ejecuta spider scan y active scan
 5. **Reportes**: Genera reportes de seguridad y ejecución
+
+## Ejecución de pruebas y reportes
+
+Consulta la guía detallada en `docs/tests.md` para:
+
+- Ejecutar los tests (`./mvnw test`)
+- Generar y abrir el reporte Allure
+- Ubicación de reportes de ZAP (HTML y JSON)
