@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"  Como tester de seguridad
+  Quiero realizar un análisis de vulnerabilidades en la aplicación web
+  Para identificar posibles riesgos de seguridad","66450","Ejecutar análisis de seguridad completo","","2025-10-22","passed","2025-10-22","","Análisis de seguridad con ZAP","Ejecutar análisis de seguridad completo",""
